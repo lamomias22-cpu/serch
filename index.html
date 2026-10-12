@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Plancha a Vapor Portátil | Arte de Regalar</title>
+  <meta name="description" content="Ropa impecable en 2 minutos, sin tabla y sin quemar la ropa. Mini Plancha a Vapor Portátil con Envío Gratis a todo el país. Pagá en cuotas o con descuento por transferencia.">
+  <meta property="og:title" content="Mini Plancha a Vapor Portátil — Envío Gratis">
+  <meta property="og:description" content="Desarrugá tu ropa en la percha, en 2 minutos. Sin tabla, sin quemaduras.">
+  <meta property="og:image" content="assets/mini-plancha.png">
+  <meta name="theme-color" content="#0d4f41">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+  1. TOP BAR
+  Visual: franja fija arriba, fondo verde profundo, texto blanco en
+  mayúsculas. En mobile rota los dos mensajes (marquee suave).
+============================================================= -->
+<div class="topbar" role="region" aria-label="Beneficios">
+  <div class="topbar__track">
+    <span>🚚 ENVÍO GRATIS A TODO EL PAÍS</span>
+    <span>💳 HASTA <b data-cfg="cuotas">6</b> CUOTAS O <b data-cfg="descuento">15</b>% OFF POR TRANSFERENCIA</span>
+    <span aria-hidden="true">🚚 ENVÍO GRATIS A TODO EL PAÍS</span>
+    <span aria-hidden="true">💳 HASTA <b data-cfg="cuotas">6</b> CUOTAS O <b data-cfg="descuento">15</b>% OFF POR TRANSFERENCIA</span>
+  </div>
+</div>
+
+<header class="nav">
+  <a class="nav__brand" href="https://artederegalar.com.ar">Arte de <em>Regalar</em></a>
+  <a class="nav__wa" href="https://wa.me/5493413088480" target="_blank" rel="noopener" aria-label="Consultanos por WhatsApp">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+    <span>Consultas</span>
+  </a>
+</header>
+
+<main>
+
+<!-- ============================================================
+  2. HERO
+  Visual: foto del producto sobre fondo crema con halo verde. Ideal
+  reemplazar por un video loop (mp4, 6-8 s, sin sonido) de la mini
+  plancha desarrugando una camisa colgada en percha. Encima del
+  pliegue: H1 + H2 + precio + CTA + badges.
+============================================================= -->
+<section class="hero">
+  <div class="hero__media">
+    <!-- Para video loop:
+    <video autoplay muted loop playsinline poster="assets/mini-plancha.png">
+      <source src="assets/plancha-percha.mp4" type="video/mp4">
+    </video> -->
+    <img src="assets/mini-plancha.png" alt="Mini Plancha a Vapor Portátil color verde con detalles dorados" width="640" height="640" fetchpriority="high">
+    <span class="hero__sticker">Lista en<br><b>30 seg</b></span>
+  </div>
+
+  <div class="hero__copy">
+    <p class="eyebrow">⭐ La plancha que entra en tu cartera</p>
+    <h1>Ropa impecable en 2 minutos. <span>Sin tabla. Sin quemaduras.</span></h1>
+    <h2>Llenás el depósito, la enchufás y en segundos tenés vapor caliente continuo. Desarrugás la camisa directo en la percha, sobre la cama o donde estés. Compacta, liviana y apta para todas las telas.</h2>
+
+    <div class="price">
+      <div class="price__row">
+        <span class="price__old" data-cfg="precioAnterior">$59.999</span>
+        <span class="price__now" data-cfg="precio">$39.999</span>
+      </div>
+      <p class="price__alt">💸 <b data-cfg="precioTransferencia">$33.999</b> por transferencia &nbsp;·&nbsp; 💳 o <b data-cfg="cuotas">6</b> cuotas</p>
+    </div>
+
+    <a class="btn btn--primary js-buy" href="#">QUIERO MI MINI PLANCHA — ENVÍO GRATIS</a>
+
+    <ul class="badges">
+      <li><span>🚚</span>Envío Gratis</li>
+      <li><span>✅</span>Garantía de Satisfacción</li>
+      <li><span>🔒</span>Pago Seguro</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+  3. DOLOR vs. SOLUCIÓN
+  Visual: dos tarjetas lado a lado (apiladas en mobile). Izquierda
+  gris/apagada con ❌; derecha verde con ✅ y borde dorado. Foto
+  sugerida izquierda: tabla de planchar desordenada; derecha: mano
+  sosteniendo la mini plancha frente a una camisa en percha.
+============================================================= -->
+<section class="section vs">
+  <p class="eyebrow center">El problema de siempre</p>
+  <h3 class="section__title">Planchar no debería robarte 20 minutos (ni tu camisa favorita)</h3>
+  <p class="section__lead">Sacar la tabla, esperar que caliente, rezar para que no quede la marca… y todo para una sola remera. Hay una forma mucho más simple.</p>
+
+  <div class="vs__grid">
+    <article class="vs__card vs__card--bad">
+      <h4>Plancha tradicional</h4>
+      <ul>
+        <li>❌ Pesada y cansadora de usar</li>
+        <li>❌ Quema o deja brillo en las telas delicadas</li>
+        <li>❌ Te obliga a armar la tabla cada vez</li>
+        <li>❌ Ocupa lugar y es incómoda de guardar</li>
+        <li>❌ Imposible llevarla de viaje</li>
+      </ul>
+    </article>
+    <article class="vs__card vs__card--good">
+      <span class="vs__tag">La solución</span>
+      <h4>Mini Plancha a Vapor</h4>
+      <ul>
+        <li>✅ Lista en segundos: enchufás y usás</li>
+        <li>✅ Ultra liviana, se maneja con una mano</li>
+        <li>✅ Planchás en la percha, sin tabla</li>
+        <li>✅ Entra en cualquier bolso o cajón</li>
+        <li>✅ Apta para todo tipo de telas, sin riesgo de quemarlas</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+  4. ESCENARIOS / CASOS DE USO
+  Visual: 3 tarjetas con foto lifestyle arriba (o ícono grande si no
+  hay foto). En mobile: carrusel horizontal con scroll-snap.
+  Fotos sugeridas: 1) valija abierta con la plancha adentro;
+  2) persona apurada desarrugando camisa en percha; 3) vestido de
+  fiesta / cortina de lino recibiendo vapor.
+============================================================= -->
+<section class="section uses">
+  <p class="eyebrow center">Hecha para tu día a día</p>
+  <h3 class="section__title">Una mini plancha, mil situaciones resueltas</h3>
+
+  <div class="uses__grid">
+    <article class="use">
+      <div class="use__icon" aria-hidden="true">✈️</div>
+      <h4>En tus viajes y escapadas</h4>
+      <p>Entra en la valija o en el bolso de mano. Llegás al hotel, colgás la ropa y en minutos está como recién planchada. Se terminó lo de presentarte arrugado a la reunión, al casamiento o a la cena.</p>
+    </article>
+    <article class="use">
+      <div class="use__icon" aria-hidden="true">⏱️</div>
+      <h4>Salidas de último momento</h4>
+      <p>¿Te avisaron a último momento? Desarrugás la camisa o la remera en 2 minutos, directamente en la percha. Sin sacar la tabla, sin esperar, sin estrés.</p>
+    </article>
+    <article class="use">
+      <div class="use__icon" aria-hidden="true">👗</div>
+      <h4>Ropa delicada y desinfección</h4>
+      <p>Ideal para vestidos de fiesta, seda, lino, sacos y cortinas. El vapor caliente además ayuda a eliminar olores de encierro y refresca la ropa entre lavados.</p>
+    </article>
+  </div>
+
+  <div class="center">
+    <a class="btn btn--primary js-buy" href="#">LA QUIERO PARA MÍ</a>
+  </div>
+</section>
+
+<!-- ============================================================
+  5. CARACTERÍSTICAS → BENEFICIOS
+  Visual: imagen del producto al centro y 4 bloques con ícono
+  circular verde. En mobile: imagen arriba y grilla 2x2.
+  GIF sugerido: giro de la plancha de vertical a horizontal.
+============================================================= -->
+<section class="section features">
+  <p class="eyebrow center">Por qué la vas a amar</p>
+  <h3 class="section__title">Pensada para que planchar deje de ser una tarea</h3>
+
+  <div class="features__grid">
+    <article class="feature">
+      <div class="feature__icon" aria-hidden="true">⚡</div>
+      <h4>Vapor en 30–40 segundos</h4>
+      <p>Calentamiento rápido: mientras te cambiás, ya está lista para usar.</p>
+    </article>
+    <article class="feature">
+      <div class="feature__icon" aria-hidden="true">🪶</div>
+      <h4>Ergonómica y ultra liviana</h4>
+      <p>Mango cómodo que se adapta a tu mano. Cero cansancio, incluso con varias prendas.</p>
+    </article>
+    <article class="feature">
+      <div class="feature__icon" aria-hidden="true">💧</div>
+      <h4>Depósito antigoteo</h4>
+      <p>Tanque de agua seguro y fácil de llenar. Nada de manchas de agua sobre la ropa.</p>
+    </article>
+    <article class="feature">
+      <div class="feature__icon" aria-hidden="true">🔄</div>
+      <h4>Vertical y horizontal</h4>
+      <p>Usala en la percha como vaporizador o sobre la cama o la mesa como plancha clásica.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+  6. OFERTA + MEDIOS DE PAGO
+  Visual: tarjeta destacada con borde dorado y fondo verde suave,
+  "¿Qué incluye?" con checks, precio grande, CTA pulsante y
+  logos de medios de pago + transporte debajo (reemplazar las
+  etiquetas de texto por los logos oficiales en SVG).
+============================================================= -->
+<section class="section offer" id="oferta">
+  <div class="offer__card">
+    <span class="offer__ribbon">OFERTA ESPECIAL</span>
+    <h3>Llevate hoy tu Mini Plancha a Vapor</h3>
+    <img src="assets/mini-plancha.png" alt="Mini Plancha a Vapor Portátil" width="640" height="640" loading="lazy">
+
+    <div class="offer__includes">
+      <p><b>¿Qué incluye tu pedido?</b></p>
+      <ul>
+        <li>✔️ 1 Mini Plancha a Vapor Portátil</li>
+        <li>✔️ Vaso medidor para llenar el depósito</li>
+        <li>✔️ Accesorios incluidos según modelo</li>
+        <li>✔️ Envío GRATIS a tu domicilio</li>
+      </ul>
+    </div>
+
+    <div class="price price--big">
+      <div class="price__row">
+        <span class="price__old" data-cfg="precioAnterior">$59.999</span>
+        <span class="price__now" data-cfg="precio">$39.999</span>
+      </div>
+    </div>
+
+    <div class="pay">
+      <div class="pay__opt pay__opt--hl">
+        <span class="pay__ico">🏦</span>
+        <div>
+          <b>Precio especial por Transferencia Bancaria</b>
+          <p><span data-cfg="precioTransferencia">$33.999</span> — ahorrás un <span data-cfg="descuento">15</span>%</p>
+        </div>
+      </div>
+      <div class="pay__opt">
+        <span class="pay__ico">💳</span>
+        <div>
+          <b>Aceptamos todas las tarjetas de crédito y débito</b>
+          <p>Hasta <span data-cfg="cuotas">6</span> cuotas</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn btn--primary btn--pulse js-buy" href="#">SÍ, QUIERO MI MINI PLANCHA</a>
+    <p class="offer__micro">🔒 Compra 100% segura · Te confirmamos el pedido por WhatsApp</p>
+
+    <div class="logos">
+      <p>Medios de pago</p>
+      <ul>
+        <li>VISA</li><li>Mastercard</li><li>American Express</li><li>Cabal</li><li>Naranja</li><li>Mercado Pago</li><li>Transferencia</li>
+      </ul>
+      <p>Envíos a todo el país</p>
+      <ul>
+        <li>Correo Argentino</li><li>Andreani</li><li>OCA</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  7. FAQ
+  Visual: acordeón limpio, una pregunta abierta a la vez. Al final,
+  caja verde con botón de WhatsApp.
+============================================================= -->
+<section class="section faq">
+  <p class="eyebrow center">Sacate las dudas</p>
+  <h3 class="section__title">Preguntas frecuentes</h3>
+
+  <div class="faq__list">
+    <details open>
+      <summary>¿Qué tipo de telas se pueden planchar?</summary>
+      <p>Prácticamente todas: algodón, lino, seda, poliéster, gasa, jean, lana y mezclas. Es ideal para prendas delicadas como vestidos, camisas de vestir y sacos, y también para cortinas y ropa de cama.</p>
+    </details>
+    <details>
+      <summary>¿Realmente no quema la ropa?</summary>
+      <p>Cuando la usás en modo vapor (en la percha), la plancha no apoya la base caliente sobre la tela: es el vapor el que relaja las fibras, por eso no quedan marcas ni brillos. Para telas muy finas usada de forma horizontal, te recomendamos pasarla en movimiento sin dejarla quieta en un mismo punto.</p>
+    </details>
+    <details>
+      <summary>¿Cómo se realizan los envíos y cuánto tardan?</summary>
+      <p><b>El envío es GRATIS a toda Argentina.</b> Despachamos tu pedido a través de correo o logística privada y te enviamos el número de seguimiento. Los plazos de entrega habituales son de <span data-cfg="plazoEnvio">3 a 7 días hábiles</span> según tu localidad.</p>
+    </details>
+    <details>
+      <summary>¿Cómo pago por transferencia o tarjeta?</summary>
+      <p>Hacé clic en cualquier botón de compra y escribinos. <b>Por transferencia</b>, te pasamos los datos bancarios y obtenés el precio especial con <span data-cfg="descuento">15</span>% de descuento. <b>Con tarjeta</b> de crédito o débito, te enviamos un link de pago seguro para abonar en hasta <span data-cfg="cuotas">6</span> cuotas.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa si tengo dudas antes de comprar?</summary>
+      <p>¡Escribinos! Te respondemos personalmente por WhatsApp y te ayudamos a decidir.</p>
+      <a class="btn btn--wa" href="https://wa.me/5493413088480?text=Hola!%20Tengo%20una%20consulta%20sobre%20la%20Mini%20Plancha%20a%20Vapor" target="_blank" rel="noopener">💬 Consultar por WhatsApp: 341 308-8480</a>
+    </details>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="final">
+  <h3>Dejá de pelearte con la tabla de planchar.</h3>
+  <p>Ropa impecable en minutos, donde estés. Envío gratis a todo el país.</p>
+  <a class="btn btn--gold js-buy" href="#">QUIERO MI MINI PLANCHA — ENVÍO GRATIS</a>
+</section>
+
+</main>
+
+<!-- ============================================================
+  8. FOOTER
+============================================================= -->
+<footer class="footer">
+  <p class="footer__brand">Arte de <em>Regalar</em></p>
+  <p><a href="https://artederegalar.com.ar">artederegalar.com.ar</a></p>
+  <p><a href="https://wa.me/5493413088480" target="_blank" rel="noopener">💬 Atención al cliente por WhatsApp: +54 9 341 308-8480</a></p>
+
+  <details class="footer__policy">
+    <summary>Política de envíos</summary>
+    <p>Envío gratis a todo el territorio argentino. Los pedidos se despachan dentro de las 24–48 h hábiles posteriores a la acreditación del pago. Al despachar, enviamos el código de seguimiento por WhatsApp. Los plazos de entrega dependen del operador logístico y de la localidad de destino.</p>
+  </details>
+  <details class="footer__policy">
+    <summary>Términos comerciales</summary>
+    <p>Los precios están expresados en pesos argentinos e incluyen IVA. El descuento por transferencia aplica únicamente a pagos por transferencia bancaria. Las cuotas y sus condiciones dependen de la tarjeta y la entidad emisora. Las promociones son válidas hasta agotar stock. Garantía de satisfacción: si el producto llega con fallas de fábrica, coordinamos el cambio sin costo. Para cambios o devoluciones, contactanos por WhatsApp dentro de los 10 días de recibido el producto (derecho de arrepentimiento, Ley 24.240).</p>
+  </details>
+
+  <p class="footer__copy">© <span id="year">2026</span> Arte de Regalar. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Barra CTA fija para mobile -->
+<div class="sticky-cta" id="stickyCta">
+  <div>
+    <span class="sticky-cta__price" data-cfg="precio">$39.999</span>
+    <span class="sticky-cta__ship">🚚 Envío gratis</span>
+  </div>
+  <a class="btn btn--primary btn--sm js-buy" href="#">COMPRAR AHORA</a>
+</div>
+
+<script src="config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
