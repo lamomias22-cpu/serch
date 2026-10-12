@@ -35,6 +35,29 @@
     onScroll();
   }
 
+  // Galería del hero con puntos
+  var track = document.querySelector(".gallery__track");
+  var dotsBox = document.querySelector(".gallery__dots");
+  if (track && dotsBox) {
+    var slides = track.children;
+    var dots = [];
+    for (var i = 0; i < slides.length; i++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.addEventListener("click", function () { track.scrollTo({ left: n * track.clientWidth, behavior: "smooth" }); });
+        dotsBox.appendChild(b);
+        dots.push(b);
+      })(i);
+    }
+    var mark = function () {
+      var cur = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (d, n) { d.classList.toggle("is-active", n === cur); });
+    };
+    track.addEventListener("scroll", mark, { passive: true });
+    mark();
+  }
+
   // FAQ: una pregunta abierta a la vez
   var faqs = document.querySelectorAll(".faq details");
   faqs.forEach(function (d) {

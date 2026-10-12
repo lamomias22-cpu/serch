@@ -119,7 +119,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   50% { box-shadow: 0 8px 20px rgba(13,79,65,.35), 0 0 0 12px rgba(19,113,92,0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn--pulse, .topbar__track { animation: none; }
+  .btn--pulse, .buybox--pulse .btn--buy, .topbar__track { animation: none; }
 }
 
 /* ---------- Comunes ---------- */
@@ -151,7 +151,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero { padding: 20px 16px 40px; }
 .hero__media {
   position: relative;
-  max-width: 320px;
+  max-width: 480px;
   margin: 0 auto 18px;
   border-radius: 28px;
   background: radial-gradient(circle at 50% 55%, var(--green-100) 0, var(--white) 70%);
@@ -202,27 +202,82 @@ ul { list-style: none; margin: 0; padding: 0; }
 .price--big .price__row { justify-content: center; }
 .price--big .price__now { font-size: 44px; }
 
-.badges {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 16px;
-}
-.badges li {
+/* ---------- Galería hero ---------- */
+.gallery { background: var(--white); }
+.gallery__track {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 10px 4px;
-  border-radius: 12px;
-  background: var(--white);
-  border: 1px solid #ece6df;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.25;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  outline: none;
 }
-.badges span { font-size: 20px; }
+.gallery__track::-webkit-scrollbar { display: none; }
+.gallery__track img {
+  flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  scroll-snap-align: center;
+  mix-blend-mode: normal;
+}
+.gallery__dots {
+  display: flex;
+  padding: 10px 0 12px;
+  justify-content: center;
+  gap: 6px;
+}
+.gallery__dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(10, 61, 50, .3);
+  cursor: pointer;
+  transition: width .2s, background .2s;
+}
+.gallery__dots button.is-active { width: 22px; background: var(--green-800); }
+
+/* ---------- Botón de compra (estilo piezas de marca) ---------- */
+.buybox { max-width: 480px; }
+.buybox--center { margin: 0 auto; }
+.btn--buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, var(--green-600), var(--green-800));
+  color: var(--white);
+  border: 2px solid var(--gold);
+  box-shadow: 0 8px 20px rgba(13, 79, 65, .35), inset 0 -3px 0 rgba(0,0,0,.18);
+}
+.btn--buy svg { width: 30px; height: 30px; flex: none; }
+.btn--buy span { display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 18px; line-height: 1.15; }
+.btn--buy small {
+  margin-top: 3px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--gold-light);
+}
+.buybox--pulse .btn--buy { animation: pulse 2.2s ease-in-out infinite; }
+.perks {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  background: var(--cream);
+  border: 1px solid #ece2d6;
+  color: var(--ink);
+}
+.perks li { display: flex; align-items: center; gap: 7px; justify-content: center; }
+.perks svg { width: 26px; height: 22px; flex: none; color: var(--ink); }
+.perks li:last-child svg { color: #1a1a1a; }
+.perks span { font-family: var(--font-head); font-weight: 700; font-size: 11px; line-height: 1.2; letter-spacing: .02em; }
 
 /* ---------- Dolor vs Solución ---------- */
 .vs { background: var(--white); }
@@ -272,19 +327,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--white);
   box-shadow: var(--shadow);
 }
-.use__icon {
-  display: grid;
-  place-items: center;
-  width: 60px;
-  height: 60px;
-  margin-bottom: 14px;
-  border-radius: 16px;
-  background: var(--green-100);
-  font-size: 30px;
-}
+.use { padding: 0 0 22px; overflow: hidden; }
+.use__img { width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 16px; }
+.use h4, .use p { padding: 0 20px; }
 .use h4 { font-size: 20px; color: var(--green-900); margin-bottom: 8px; }
 .use p { margin: 0; color: var(--muted); }
-.uses .btn { max-width: 420px; margin: 0 auto; }
 
 /* ---------- Características ---------- */
 .features { background: var(--green-100); }
@@ -483,7 +530,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero__media { max-width: none; margin: 0; }
   .hero h1 { font-size: 48px; }
   .hero h2 { font-size: 18px; }
-  .hero .btn { max-width: 480px; }
 
   .section { padding: 88px 40px; }
   .section__title { font-size: 38px; }

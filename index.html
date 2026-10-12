@@ -42,19 +42,20 @@
 
 <!-- ============================================================
   2. HERO
-  Visual: foto del producto sobre fondo crema con halo verde. Ideal
-  reemplazar por un video loop (mp4, 6-8 s, sin sonido) de la mini
-  plancha desarrugando una camisa colgada en percha. Encima del
-  pliegue: H1 + H2 + precio + CTA + badges.
+  Visual: galería deslizable con las piezas de la marca (viaje, sin
+  tabla, prendas delicadas) + foto del producto. Debajo: H1 + H2 +
+  precio + botón de compra con la franja de beneficios de las piezas
+  (Envíos gratis · Transferencias y tarjetas · WhatsApp).
 ============================================================= -->
 <section class="hero">
-  <div class="hero__media">
-    <!-- Para video loop:
-    <video autoplay muted loop playsinline poster="assets/mini-plancha.png">
-      <source src="assets/plancha-percha.mp4" type="video/mp4">
-    </video> -->
-    <img src="assets/mini-plancha.png" alt="Mini Plancha a Vapor Portátil color verde con detalles dorados" width="640" height="640" fetchpriority="high">
-    <span class="hero__sticker">Lista en<br><b>30 seg</b></span>
+  <div class="hero__media gallery">
+    <div class="gallery__track" tabindex="0" aria-label="Fotos del producto">
+      <img src="assets/viaje.jpg" alt="¡Que tu ropa no viaje arrugada! Mini plancha desarrugando una camisa de lino en un hotel" width="1000" height="1000" fetchpriority="high">
+      <img src="assets/sin-tabla.jpg" alt="¡Olvidate de la pesada tabla de planchar! Mini plancha sobre un saco colgado en percha" width="1000" height="1000" loading="lazy">
+      <img src="assets/prendas-delicadas.jpg" alt="¡Vapor suave y potente! Mini plancha sobre un vestido de encaje" width="1000" height="1000" loading="lazy">
+      <img src="assets/mini-plancha.png" alt="Mini Plancha a Vapor Portátil color verde con detalles dorados" width="640" height="640" loading="lazy">
+    </div>
+    <div class="gallery__dots" aria-hidden="true"></div>
   </div>
 
   <div class="hero__copy">
@@ -70,13 +71,17 @@
       <p class="price__alt">💸 <b data-cfg="precioTransferencia">$50.149</b> por transferencia &nbsp;·&nbsp; 💳 o <b data-cfg="cuotas">6</b> cuotas</p>
     </div>
 
-    <a class="btn btn--primary js-buy" href="#">QUIERO MI MINI PLANCHA — ENVÍO GRATIS</a>
-
-    <ul class="badges">
-      <li><span>🚚</span>Envío Gratis</li>
-      <li><span>✅</span>Garantía de Satisfacción</li>
-      <li><span>🔒</span>Pago Seguro</li>
-    </ul>
+    <div class="buybox">
+      <a class="btn btn--buy js-buy" href="#">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+        <span>QUIERO MI MINI PLANCHA<small>Envío gratis · Te respondemos al instante</small></span>
+      </a>
+      <ul class="perks">
+        <li><svg viewBox="0 0 32 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 4h13v13H9zM22 8h5l3 4v5h-8"/><circle cx="13" cy="19" r="2.4" fill="var(--cream)"/><circle cx="25" cy="19" r="2.4" fill="var(--cream)"/><path d="M1 7h6M3 11h4M1 15h6" stroke-linecap="round"/></svg><span>ENVÍOS<br>GRATIS</span></li>
+        <li><svg viewBox="0 0 28 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="6" y="2" width="20" height="12" rx="2" transform="rotate(-8 16 8)"/><rect x="2" y="9" width="20" height="13" rx="2" fill="var(--cream)"/><path d="M12 12.5v7M14 13.5h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3H10" stroke-linecap="round"/><path d="M4 15.5h3M17 15.5h3" stroke-linecap="round"/></svg><span>TRANSFERENCIAS<br>Y TARJETAS</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg><span>341<br>308-8480</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -131,25 +136,33 @@
 
   <div class="uses__grid">
     <article class="use">
-      <div class="use__icon" aria-hidden="true">✈️</div>
+      <img class="use__img" src="assets/viaje.jpg" alt="Mini plancha en un viaje" width="1000" height="1000" loading="lazy">
       <h4>En tus viajes y escapadas</h4>
       <p>Entra en la valija o en el bolso de mano. Llegás al hotel, colgás la ropa y en minutos está como recién planchada. Se terminó lo de presentarte arrugado a la reunión, al casamiento o a la cena.</p>
     </article>
     <article class="use">
-      <div class="use__icon" aria-hidden="true">⏱️</div>
+      <img class="use__img" src="assets/sin-tabla.jpg" alt="Mini plancha sobre un saco en percha" width="1000" height="1000" loading="lazy">
       <h4>Salidas de último momento</h4>
       <p>¿Te avisaron a último momento? Desarrugás la camisa o la remera en 2 minutos, directamente en la percha. Sin sacar la tabla, sin esperar, sin estrés.</p>
     </article>
     <article class="use">
-      <div class="use__icon" aria-hidden="true">👗</div>
+      <img class="use__img" src="assets/prendas-delicadas.jpg" alt="Mini plancha sobre un vestido delicado" width="1000" height="1000" loading="lazy">
       <h4>Ropa delicada y desinfección</h4>
       <p>Ideal para vestidos de fiesta, seda, lino, sacos y cortinas. El vapor caliente además ayuda a eliminar olores de encierro y refresca la ropa entre lavados.</p>
     </article>
   </div>
 
-  <div class="center">
-    <a class="btn btn--primary js-buy" href="#">LA QUIERO PARA MÍ</a>
-  </div>
+  <div class="buybox buybox--center">
+      <a class="btn btn--buy js-buy" href="#">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+        <span>LA QUIERO PARA MÍ<small>Envío gratis · Te respondemos al instante</small></span>
+      </a>
+      <ul class="perks">
+        <li><svg viewBox="0 0 32 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 4h13v13H9zM22 8h5l3 4v5h-8"/><circle cx="13" cy="19" r="2.4" fill="var(--cream)"/><circle cx="25" cy="19" r="2.4" fill="var(--cream)"/><path d="M1 7h6M3 11h4M1 15h6" stroke-linecap="round"/></svg><span>ENVÍOS<br>GRATIS</span></li>
+        <li><svg viewBox="0 0 28 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="6" y="2" width="20" height="12" rx="2" transform="rotate(-8 16 8)"/><rect x="2" y="9" width="20" height="13" rx="2" fill="var(--cream)"/><path d="M12 12.5v7M14 13.5h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3H10" stroke-linecap="round"/><path d="M4 15.5h3M17 15.5h3" stroke-linecap="round"/></svg><span>TRANSFERENCIAS<br>Y TARJETAS</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg><span>341<br>308-8480</span></li>
+      </ul>
+    </div>
 </section>
 
 <!-- ============================================================
@@ -233,7 +246,17 @@
       </div>
     </div>
 
-    <a class="btn btn--primary btn--pulse js-buy" href="#">SÍ, QUIERO MI MINI PLANCHA</a>
+    <div class="buybox buybox--pulse">
+      <a class="btn btn--buy js-buy" href="#">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+        <span>SÍ, QUIERO MI MINI PLANCHA<small>Envío gratis · Te respondemos al instante</small></span>
+      </a>
+      <ul class="perks">
+        <li><svg viewBox="0 0 32 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 4h13v13H9zM22 8h5l3 4v5h-8"/><circle cx="13" cy="19" r="2.4" fill="var(--cream)"/><circle cx="25" cy="19" r="2.4" fill="var(--cream)"/><path d="M1 7h6M3 11h4M1 15h6" stroke-linecap="round"/></svg><span>ENVÍOS<br>GRATIS</span></li>
+        <li><svg viewBox="0 0 28 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="6" y="2" width="20" height="12" rx="2" transform="rotate(-8 16 8)"/><rect x="2" y="9" width="20" height="13" rx="2" fill="var(--cream)"/><path d="M12 12.5v7M14 13.5h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3H10" stroke-linecap="round"/><path d="M4 15.5h3M17 15.5h3" stroke-linecap="round"/></svg><span>TRANSFERENCIAS<br>Y TARJETAS</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.7 13.7 0 0 1-5.2-4.6c-.4-.5-1.2-1.7-1.2-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg><span>341<br>308-8480</span></li>
+      </ul>
+    </div>
     <p class="offer__micro">🔒 Compra 100% segura · Te confirmamos el pedido por WhatsApp</p>
 
     <div class="logos">
