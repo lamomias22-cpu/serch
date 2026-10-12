@@ -12,5 +12,5 @@ window.LANDING_CONFIG = {
   // Botones de compra. Si tenés checkout en la tienda, poné la URL del
   // producto en checkoutUrl y los CTA irán ahí en lugar de a WhatsApp.
   checkoutUrl: "",
-  whatsappUrl: "https://wa.me/5493413088480?text=Hola!%20Quiero%20comprar%20la%20Mini%20Plancha%20a%20Vapor"
+  whatsappUrl: "https://wa.me/5493413088484?text=Hola!%20Quiero%20comprar%20la%20Mini%20Plancha%20a%20Vapor"
 };
