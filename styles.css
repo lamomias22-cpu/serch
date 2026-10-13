@@ -274,6 +274,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 .perks li:last-child svg { color: #1a1a1a; }
 .perks span { font-family: var(--font-head); font-weight: 700; font-size: 11px; line-height: 1.2; letter-spacing: .02em; }
 
+.section__cta { margin-top: 32px; }
+
 /* ---------- Dolor vs Solución ---------- */
 .vs { background: var(--white); }
 .vs__grid { display: grid; gap: 16px; max-width: 900px; margin: 0 auto; }
