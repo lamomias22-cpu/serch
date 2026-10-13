@@ -7,7 +7,7 @@ window.LANDING_CONFIG = {
   producto: "Tabla Pilates Reformer Plegable",
   precio: 169999,             // precio de lista (tarjeta)
   precioAnterior: 279999,     // precio tachado; poné null para ocultarlo
-  descuento: 10,              // % de descuento por transferencia
+  descuento: 5,               // % de descuento por transferencia
   cuotas: "3 cuotas",         // texto de cuotas con tarjeta (ej.: "3 cuotas sin interés")
   plazoEnvio: "3 a 7 días hábiles",
 
