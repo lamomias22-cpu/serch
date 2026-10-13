@@ -57,6 +57,27 @@
     mark();
   }
 
+  // Menú lateral
+  var drawer = document.getElementById("menu");
+  var menuBtn = document.querySelector(".nav__menu");
+  if (drawer && menuBtn) {
+    var setMenu = function (open) {
+      drawer.classList.toggle("is-open", open);
+      drawer.setAttribute("aria-hidden", String(!open));
+      menuBtn.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("menu-open", open);
+      if (open) drawer.querySelector(".drawer__close").focus();
+      else menuBtn.focus({ preventScroll: true });
+    };
+    menuBtn.addEventListener("click", function () { setMenu(true); });
+    drawer.querySelectorAll("[data-close]").forEach(function (el) {
+      el.addEventListener("click", function () { setMenu(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) setMenu(false);
+    });
+  }
+
   // FAQ: una pregunta abierta a la vez
   var faqs = document.querySelectorAll(".faq details");
   faqs.forEach(function (d) {

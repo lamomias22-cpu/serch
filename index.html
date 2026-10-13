@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
 
 <!-- ============================================================
   1. TOP BAR
@@ -32,6 +32,9 @@
 </div>
 
 <header class="nav">
+  <button class="nav__menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
   <a class="nav__brand" href="https://artederegalar.com.ar" aria-label="Arte de Regalar">
     <img src="assets/logo-regalo.png" alt="" width="142" height="160">
     <img src="assets/logo-texto.png" alt="Arte de Regalar" width="539" height="80">
@@ -41,6 +44,35 @@
     <span>Consultas</span>
   </a>
 </header>
+
+<!-- Menú lateral desplegable (estilo tiendas Emidica) -->
+<div class="drawer" id="menu" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <nav class="drawer__panel" aria-label="Menú">
+    <div class="drawer__head">
+      <img src="assets/logo.png" alt="Arte de Regalar" width="473" height="360">
+      <button class="drawer__close" type="button" aria-label="Cerrar menú" data-close>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="drawer__label">Mini Plancha a Vapor</p>
+    <ul class="drawer__links">
+      <li><a href="#top" data-close>Inicio</a></li>
+      <li><a href="#comparativa" data-close>¿Por qué elegirla?</a></li>
+      <li><a href="#usos" data-close>Usos</a></li>
+      <li><a href="#caracteristicas" data-close>Características</a></li>
+      <li><a href="#oferta" data-close>Precio y formas de pago</a></li>
+      <li><a href="#preguntas" data-close>Preguntas frecuentes</a></li>
+    </ul>
+    <p class="drawer__label">Arte de Regalar</p>
+    <ul class="drawer__links">
+      <li><a href="https://artederegalar.com.ar">Ver toda la tienda</a></li>
+      <li><a href="https://wa.me/5493413088480" target="_blank" rel="noopener">Contacto por WhatsApp</a></li>
+    </ul>
+    <a class="btn btn--primary drawer__buy js-buy" href="#">COMPRAR MINI PLANCHA</a>
+    <p class="drawer__foot">🚚 Envío gratis a todo el país</p>
+  </nav>
+</div>
 
 <main>
 
@@ -98,7 +130,7 @@
   sugerida izquierda: tabla de planchar desordenada; derecha: mano
   sosteniendo la mini plancha frente a una camisa en percha.
 ============================================================= -->
-<section class="section vs">
+<section class="section vs" id="comparativa">
   <p class="eyebrow center">El problema de siempre</p>
   <h3 class="section__title">Planchar no debería robarte 20 minutos (ni tu camisa favorita)</h3>
   <p class="section__lead">Sacar la tabla, esperar que caliente, rezar para que no quede la marca… y todo para una sola remera. Hay una forma mucho más simple.</p>
@@ -149,7 +181,7 @@
   2) persona apurada desarrugando camisa en percha; 3) vestido de
   fiesta / cortina de lino recibiendo vapor.
 ============================================================= -->
-<section class="section uses">
+<section class="section uses" id="usos">
   <p class="eyebrow center">Hecha para tu día a día</p>
   <h3 class="section__title">Una mini plancha, mil situaciones resueltas</h3>
 
@@ -195,7 +227,7 @@
   circular verde. En mobile: imagen arriba y grilla 2x2.
   GIF sugerido: giro de la plancha de vertical a horizontal.
 ============================================================= -->
-<section class="section features">
+<section class="section features" id="caracteristicas">
   <p class="eyebrow center">Por qué la vas a amar</p>
   <h3 class="section__title">Pensada para que planchar deje de ser una tarea</h3>
 
@@ -314,7 +346,7 @@
   Visual: acordeón limpio, una pregunta abierta a la vez. Al final,
   caja verde con botón de WhatsApp.
 ============================================================= -->
-<section class="section faq">
+<section class="section faq" id="preguntas">
   <p class="eyebrow center">Sacate las dudas</p>
   <h3 class="section__title">Preguntas frecuentes</h3>
 
