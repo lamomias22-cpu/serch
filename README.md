@@ -41,3 +41,4 @@ Segunda landing, en la carpeta `pilates/`. Reutiliza `styles.css` y `main.js` de
 - **Botón flotante de WhatsApp** siempre visible (en mobile sube cuando aparece la barra de compra).
 - Estructura: Hero con badges de confianza · Dolor vs. Solución · Características · Para quién es · Oferta y medios de pago · FAQ · CTA final · Footer.
 - Pendiente recomendado: sumar más fotos lifestyle propias para no repetir las piezas en distintas secciones, y un GIF de la tabla plegándose.
+- **Archivo único:** `pilates/pilates-completo.html` es la misma landing en un solo archivo (estilos, scripts e imágenes incluidos), para subir a cualquier hosting o abrir sin la carpeta. Si cambiás algo, regeneralo con `python3 armar-completo.py` desde `pilates/`.
