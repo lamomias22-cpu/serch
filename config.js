@@ -6,7 +6,6 @@ window.LANDING_CONFIG = {
   precio: 58999,              // precio de lista (tarjeta)
   precioAnterior: null,       // precio tachado; poné null para ocultarlo
   descuento: 15,              // % de descuento por transferencia
-  cuotas: 6,                  // cantidad máxima de cuotas
   plazoEnvio: "3 a 7 días hábiles",
 
   // Botones de compra. Si tenés checkout en la tienda, poné la URL del

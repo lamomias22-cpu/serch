@@ -8,7 +8,6 @@
     precioTransferencia: cfg.precio != null && cfg.descuento != null
       ? ars(cfg.precio * (1 - cfg.descuento / 100)) : null,
     descuento: cfg.descuento,
-    cuotas: cfg.cuotas,
     plazoEnvio: cfg.plazoEnvio
   };
 

@@ -2,8 +2,8 @@
 
 Landing estática para venta directa, pensada primero para mobile. Abrí `index.html` en el navegador o subí la carpeta a cualquier hosting.
 
-## Editar precio, cuotas y descuento
-Todo se cambia en `config.js` (precio, precio tachado, % por transferencia, cuotas, plazo de envío). El precio por transferencia se calcula solo.
+## Editar precio y descuento
+Todo se cambia en `config.js` (precio, precio tachado, % por transferencia, plazo de envío). El precio por transferencia se calcula solo.
 Si tenés checkout en la tienda, poné la URL en `checkoutUrl` y los botones de compra van ahí; si lo dejás vacío, abren WhatsApp con el mensaje precargado.
 
 ## Indicaciones visuales
