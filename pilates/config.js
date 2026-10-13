@@ -8,7 +8,6 @@ window.LANDING_CONFIG = {
   precio: 169999,             // precio de lista (tarjeta)
   precioAnterior: 279999,     // precio tachado; poné null para ocultarlo
   descuento: 5,               // % de descuento por transferencia
-  cuotas: "3 cuotas",         // texto de cuotas con tarjeta (ej.: "3 cuotas sin interés")
   plazoEnvio: "3 a 7 días hábiles",
 
   // Botones de compra:
