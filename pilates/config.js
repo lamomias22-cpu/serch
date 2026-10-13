@@ -14,6 +14,6 @@ window.LANDING_CONFIG = {
   //  "tienda"     → lleva a checkoutUrl (el producto en la tienda)
   modoCompra: "formulario",
   whatsappPedidos: "5493413088480",
-  checkoutUrl: "https://artederegalar.com.ar",
+  checkoutUrl: "https://artederegalar.com.ar/busqueda?s=pilates",
   whatsappUrl: "https://wa.me/5493413088480?text=Hola!%20Quiero%20info%20de%20la%20Tabla%20Pilates%20Reformer"
 };
