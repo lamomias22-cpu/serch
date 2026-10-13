@@ -40,4 +40,4 @@ Segunda landing, en la carpeta `pilates/`. Reutiliza `styles.css` y `main.js` de
 - **Botón de compra con menú desplegable** (hero, oferta, cierre y barra fija en mobile): al tocarlo se despliegan 4 opciones: transferencia (con descuento), tarjeta en cuotas, comprar por WhatsApp o ver en la tienda. Las dos primeras abren el formulario de pedido con el método de pago ya elegido.
 - **Botón flotante de WhatsApp** siempre visible (en mobile sube cuando aparece la barra de compra).
 - Estructura: Hero con badges de confianza · Dolor vs. Solución · Características · Para quién es · Oferta y medios de pago · FAQ · CTA final · Footer.
-- Pendiente recomendado: sumar fotos lifestyle propias (tabla plegada guardada, uso en depto chico) para no repetir las piezas en distintas secciones, y un GIF de la tabla plegándose.
+- Pendiente recomendado: sumar más fotos lifestyle propias para no repetir las piezas en distintas secciones, y un GIF de la tabla plegándose.
