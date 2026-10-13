@@ -17,11 +17,110 @@
     if (values[key] != null) el.textContent = values[key];
   });
 
-  var buyUrl = cfg.checkoutUrl || cfg.whatsappUrl;
+  var storeUrl = cfg.checkoutUrl || cfg.whatsappUrl;
+  document.querySelectorAll(".js-store").forEach(function (a) { a.href = storeUrl; });
+  var useForm = cfg.modoCompra === "formulario" && document.getElementById("checkout");
   document.querySelectorAll(".js-buy").forEach(function (a) {
-    a.href = buyUrl;
+    a.href = storeUrl;
     if (!cfg.checkoutUrl) { a.target = "_blank"; a.rel = "noopener"; }
+    if (useForm) a.addEventListener("click", function (e) { e.preventDefault(); openCheckout(a); });
   });
+
+  // Formulario de pedido
+  var co = document.getElementById("checkout");
+  var form = document.getElementById("coForm");
+  var lastTrigger = null;
+  function openCheckout(trigger) {
+    lastTrigger = trigger;
+    if (drawer && drawer.classList.contains("is-open")) setMenu(false);
+    form.hidden = false;
+    document.getElementById("coDone").hidden = true;
+    co.classList.add("is-open");
+    co.setAttribute("aria-hidden", "false");
+    document.body.classList.add("menu-open");
+    co.querySelector(".checkout__panel").scrollTop = 0;
+    setTimeout(function () { document.getElementById("coQty").focus(); }, 50);
+  }
+  function closeCheckout() {
+    co.classList.remove("is-open");
+    co.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("menu-open");
+    if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+  }
+  if (co && form) {
+    co.querySelectorAll("[data-co-close]").forEach(function (el) { el.addEventListener("click", closeCheckout); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && co.classList.contains("is-open")) closeCheckout();
+    });
+
+    var calc = function () {
+      var qty = parseInt(form.cantidad.value, 10) || 1;
+      var sub = (cfg.precio || 0) * qty;
+      var transfer = form.pago.value === "Transferencia";
+      var off = transfer ? Math.round(sub * (cfg.descuento || 0) / 100) : 0;
+      document.getElementById("coSubtotal").textContent = ars(sub);
+      document.getElementById("coOffRow").hidden = !transfer;
+      document.getElementById("coOff").textContent = "-" + ars(off);
+      document.getElementById("coTotal").textContent = ars(sub - off);
+      return { qty: qty, sub: sub, off: off, total: sub - off };
+    };
+    form.addEventListener("change", calc);
+    form.addEventListener("input", function (e) {
+      var fld = e.target.closest(".fld");
+      if (fld && e.target.checkValidity()) fld.classList.remove("is-invalid");
+      if (!form.querySelector(".fld.is-invalid") && form.pago.value) document.getElementById("coError").hidden = true;
+    });
+    form.addEventListener("change", function () {
+      if (!form.querySelector(".fld.is-invalid") && form.pago.value) document.getElementById("coError").hidden = true;
+    });
+    calc();
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var err = document.getElementById("coError");
+      var bad = Array.prototype.filter.call(form.elements, function (el) {
+        var invalid = el.willValidate && !el.checkValidity();
+        if (el.closest && el.closest(".fld")) el.closest(".fld").classList.toggle("is-invalid", invalid);
+        return invalid;
+      });
+      if (bad.length) {
+        err.textContent = !form.pago.value && bad.length === 1
+          ? "Elegí un método de pago."
+          : "Revisá los campos marcados: son obligatorios.";
+        err.hidden = false;
+        bad[0].focus();
+        return;
+      }
+      err.hidden = true;
+      var t = calc();
+      var f = function (n) { return form[n].value.trim(); };
+      var lines = [
+        "¡Hola! Quiero hacer este pedido:",
+        "",
+        "🛍️ " + t.qty + " x Mini Plancha a Vapor Portátil",
+        "Subtotal: " + ars(t.sub),
+        t.off ? "Descuento transferencia (" + cfg.descuento + "%): -" + ars(t.off) : null,
+        "Envío: GRATIS",
+        "*Total: " + ars(t.total) + "*",
+        "Pago: " + f("pago"),
+        "",
+        "📦 Mis datos:",
+        "Nombre: " + f("nombre"),
+        "Teléfono: " + f("telefono"),
+        "DNI: " + f("dni"),
+        "E-mail: " + f("email"),
+        "Dirección: " + f("direccion"),
+        f("referencia") ? "Referencia: " + f("referencia") : null,
+        "Ciudad: " + f("ciudad") + ", " + f("provincia") + " (CP " + f("cp") + ")"
+      ].filter(function (l) { return l !== null; });
+      var url = "https://wa.me/" + (cfg.whatsappPedidos || "") + "?text=" + encodeURIComponent(lines.join("\n"));
+      document.getElementById("coResend").href = url;
+      form.hidden = true;
+      document.getElementById("coDone").hidden = false;
+      co.querySelector(".checkout__panel").scrollTop = 0;
+      window.open(url, "_blank", "noopener");
+    });
+  }
 
   // Barra fija: aparece cuando el CTA del hero sale de pantalla
   var sticky = document.getElementById("stickyCta");

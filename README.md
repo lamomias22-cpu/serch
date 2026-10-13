@@ -4,7 +4,7 @@ Landing estática para venta directa, pensada primero para mobile. Abrí `index.
 
 ## Editar precio y descuento
 Todo se cambia en `config.js` (precio, precio tachado, % por transferencia, plazo de envío). El precio por transferencia se calcula solo.
-Si tenés checkout en la tienda, poné la URL en `checkoutUrl` y los botones de compra van ahí; si lo dejás vacío, abren WhatsApp con el mensaje precargado.
+Botones de compra: con `modoCompra: "formulario"` abren el formulario de pedido (mismo esquema que el checkout de Emidica) y al confirmar envían el pedido completo por WhatsApp a `whatsappPedidos`. Con `modoCompra: "tienda"` llevan directo al producto en la tienda (`checkoutUrl`).
 
 ## Indicaciones visuales
 Cada sección de `index.html` tiene un comentario `<!-- ... -->` con la indicación visual (fotos o video sugeridos, cómo se ve en mobile y en desktop).
