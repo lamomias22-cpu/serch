@@ -14,23 +14,20 @@ s = s.replace(links, '<style>\n' + css + '\n</style>')
 s = re.sub(r'<meta property="og:image"[^>]*>\n\s*', '', s)
 s = s.replace('href="../assets/favicon.png"', 'href="' + uri('../assets/favicon.png') + '"')
 
-# Cada imagen se incrusta una sola vez; las repeticiones se completan por script
-seen = set()
+# Cada imagen va incrustada en su lugar, así se ven aunque el visor no ejecute scripts
+cache = {}
 def img(m):
     p = m.group(1)
-    key = p.rsplit('/', 1)[1].rsplit('.', 1)[0]
-    if p not in seen:
-        seen.add(p)
-        return f'src="{uri(p)}" id="img-{key}"'
-    return f'src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-img="{key}"'
+    if p not in cache:
+        cache[p] = uri(p)
+    return f'src="{cache[p]}"'
 s = re.sub(r'src="((?:\.\./)?assets/[^"]+)"', img, s)
 s = s.replace(' loading="lazy"', '')
 
-fill = 'document.querySelectorAll("img[data-img]").forEach(function (i) { i.src = document.getElementById("img-" + i.getAttribute("data-img")).src; });'
-js = '\n'.join([fill] + [open(f).read() for f in ['config.js', '../main.js', 'pilates.js']])
+js = '\n'.join(open(f).read() for f in ['config.js', '../main.js', 'pilates.js'])
 scripts = '<script src="config.js"></script>\n<script src="../main.js"></script>\n<script src="pilates.js"></script>'
 assert scripts in s
 s = s.replace(scripts, '<script>\n' + js + '\n</script>')
 
 open('pilates-completo.html', 'w').write(s)
-print(f'pilates-completo.html: {len(s) // 1024} KB, {len(seen)} imágenes')
+print(f'pilates-completo.html: {len(s) // 1024} KB, {len(cache)} imágenes')

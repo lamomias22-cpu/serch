@@ -199,3 +199,11 @@ body.menu-open .wa-float, body:has(.sticky-cta .buydrop.is-open) .wa-float { dis
   .wa-float { right: 24px; bottom: 24px; }
 }
 .price__label:has(.price__old[hidden]) { display: none; }
+
+/* ---------- Galería: las 4 piezas a la vista ---------- */
+.showcase { background: var(--white); }
+.showcase__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 1080px; margin: 24px auto 0; }
+.showcase figure { margin: 0; }
+.showcase img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+.showcase figcaption { margin-top: 8px; text-align: center; font-size: 13px; font-weight: 600; color: var(--green-900); }
+@media (min-width: 860px) { .showcase__grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
