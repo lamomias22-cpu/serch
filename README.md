@@ -29,3 +29,15 @@ La landing se publica desde este repositorio y los botones de compra siguen llev
 3. **Conectar el subdominio:** de vuelta en *Settings* → *Pages*, en *Custom domain* escribí `oferta.artederegalar.com.ar`, tocá *Save* y, cuando GitHub lo verifique, activá *Enforce HTTPS*.
 
 Listo: la landing queda en `https://oferta.artederegalar.com.ar` y la tienda sigue en `https://artederegalar.com.ar`.
+
+---
+
+# Landing — Tabla Pilates Reformer Plegable (`pilates/`)
+
+Segunda landing, en la carpeta `pilates/`. Reutiliza `styles.css` y `main.js` de la raíz con un tema violeta propio (`pilates/pilates.css`). Una vez publicada queda en `https://lamomias22-cpu.github.io/serch/pilates/` (o `https://oferta.artederegalar.com.ar/pilates/` con el subdominio).
+
+- **Precio, precio tachado, % por transferencia, cuotas y plazo de envío:** en `pilates/config.js`. ⚠️ Los precios que trae son de referencia: reemplazalos por los reales.
+- **Botón de compra con menú desplegable** (hero, oferta, cierre y barra fija en mobile): al tocarlo se despliegan 4 opciones: transferencia (con descuento), tarjeta en cuotas, comprar por WhatsApp o ver en la tienda. Las dos primeras abren el formulario de pedido con el método de pago ya elegido.
+- **Botón flotante de WhatsApp** siempre visible (en mobile sube cuando aparece la barra de compra).
+- Estructura: Hero con badges de confianza · Dolor vs. Solución · Características · Para quién es · Oferta y medios de pago · FAQ · CTA final · Footer.
+- Pendiente recomendado: sumar fotos lifestyle propias (tabla plegada guardada, uso en depto chico) para no repetir las piezas en distintas secciones, y un GIF de la tabla plegándose.
