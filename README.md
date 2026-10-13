@@ -36,7 +36,7 @@ Listo: la landing queda en `https://oferta.artederegalar.com.ar` y la tienda sig
 
 Segunda landing, en la carpeta `pilates/`. Reutiliza `styles.css` y `main.js` de la raíz con un tema violeta propio (`pilates/pilates.css`). Una vez publicada queda en `https://lamomias22-cpu.github.io/serch/pilates/` (o `https://oferta.artederegalar.com.ar/pilates/` con el subdominio).
 
-- **Precio, precio tachado, % por transferencia y plazo de envío:** en `pilates/config.js`. ⚠️ Los precios que trae son de referencia: reemplazalos por los reales.
+- **Precio, precio tachado, % por transferencia y plazo de envío:** en `pilates/config.js`. Precio tachado oculto (`precioAnterior: null`); cargalo si querés mostrarlo.
 - **Botón de compra con menú desplegable** (hero, oferta, cierre y barra fija en mobile): al tocarlo se despliegan 4 opciones: transferencia (con descuento), tarjeta, comprar por WhatsApp o ver en la tienda. Las dos primeras abren el formulario de pedido con el método de pago ya elegido.
 - **Botón flotante de WhatsApp** siempre visible (en mobile sube cuando aparece la barra de compra).
 - Estructura: Hero con badges de confianza · Dolor vs. Solución · Características · Para quién es · Oferta y medios de pago · FAQ · CTA final · Footer.

@@ -1,12 +1,11 @@
 /*
  * CONFIGURACIÓN DE LA OFERTA — Tabla Pilates Reformer Plegable
  * Editá estos valores y se actualizan en toda la landing.
- * ⚠️ Los precios son de referencia: reemplazalos por los reales antes de publicar.
  */
 window.LANDING_CONFIG = {
   producto: "Tabla Pilates Reformer Plegable",
   precio: 169999,             // precio de lista (tarjeta)
-  precioAnterior: 279999,     // precio tachado; poné null para ocultarlo
+  precioAnterior: null,       // precio tachado; poné null para ocultarlo
   descuento: 5,               // % de descuento por transferencia
   plazoEnvio: "3 a 7 días hábiles",
 

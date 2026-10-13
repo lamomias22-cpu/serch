@@ -198,3 +198,4 @@ body.menu-open .wa-float, body:has(.sticky-cta .buydrop.is-open) .wa-float { dis
   body:has(.sticky-cta.is-visible) .wa-float { bottom: 24px; }
   .wa-float { right: 24px; bottom: 24px; }
 }
+.price__label:has(.price__old[hidden]) { display: none; }
