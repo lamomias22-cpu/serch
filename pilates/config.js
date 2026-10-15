@@ -14,6 +14,6 @@ window.LANDING_CONFIG = {
   //  "tienda"     → lleva a checkoutUrl (el producto en la tienda)
   modoCompra: "formulario",
   whatsappPedidos: "5493413088480",
-  checkoutUrl: "https://artederegalar.com.ar/busqueda?s=pilates",
+  checkoutUrl: "https://artederegalar.com.ar/landing-propia-para-tabla-pilates-reformer-plegable-multifun/l/6acd9746753313b8c70fb200",
   whatsappUrl: "https://wa.me/5493413088480?text=Hola!%20Quiero%20info%20de%20la%20Tabla%20Pilates%20Reformer"
 };
