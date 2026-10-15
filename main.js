@@ -8,6 +8,7 @@
     precioTransferencia: cfg.precio != null && cfg.descuento != null
       ? ars(cfg.precio * (1 - cfg.descuento / 100)) : null,
     descuento: cfg.descuento,
+    cuotas: cfg.cuotas,
     plazoEnvio: cfg.plazoEnvio
   };
 
@@ -97,7 +98,7 @@
       var lines = [
         "¡Hola! Quiero hacer este pedido:",
         "",
-        "🛍️ " + t.qty + " x Mini Plancha a Vapor Portátil",
+        "🛍️ " + t.qty + " x " + (cfg.producto || "Mini Plancha a Vapor Portátil"),
         "Subtotal: " + ars(t.sub),
         t.off ? "Descuento transferencia (" + cfg.descuento + "%): -" + ars(t.off) : null,
         "Envío: GRATIS",
@@ -124,7 +125,7 @@
 
   // Barra fija: aparece cuando el CTA del hero sale de pantalla
   var sticky = document.getElementById("stickyCta");
-  var heroCta = document.querySelector(".hero .js-buy");
+  var heroCta = document.querySelector(".hero .js-hero-cta, .hero .js-buy");
   if (sticky && heroCta) {
     var onScroll = function () {
       sticky.classList.toggle("is-visible", heroCta.getBoundingClientRect().bottom < 0);

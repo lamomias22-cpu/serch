@@ -1,0 +1,226 @@
+/* Tema Tabla Pilates: violeta lavanda (color del producto) + dorado de la marca.
+   Se carga después de ../styles.css y reutiliza sus componentes. */
+:root {
+  --green-900: #2b1a5c;
+  --green-800: #3b2380;
+  --green-600: #7357d6;
+  --green-100: #efeafc;
+  --gold: #c39a52;
+  --gold-light: #f4e6c8;
+  --cream: #faf8fd;
+  --ink: #1f1a2e;
+  --muted: #625c72;
+  --shadow: 0 10px 30px rgba(43, 26, 92, .14);
+}
+
+/* Sombras y fondos que en la base estaban fijos en verde */
+.btn--primary, .btn--buy { box-shadow: 0 8px 20px rgba(59, 35, 128, .35), inset 0 -3px 0 rgba(0,0,0,.18); }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(59,35,128,.35), 0 0 0 0 rgba(115,87,214,.45); }
+  50% { box-shadow: 0 8px 20px rgba(59,35,128,.35), 0 0 0 12px rgba(115,87,214,0); }
+}
+.checkout__overlay, .drawer__overlay { background: rgba(31, 18, 66, .6); }
+.fld__box:focus-within { box-shadow: 0 0 0 3px rgba(115,87,214,.18); }
+.footer { background: #1d1240; color: #d6d0e6; }
+.nav { border-bottom-color: #ebe6f3; }
+.perks { border-color: #e6def3; }
+
+/* Las fotos son piezas completas: sin mezcla de color */
+.hero__media img, .gallery__track img, .co-product img { mix-blend-mode: normal; }
+.gallery__track img { aspect-ratio: 1; object-fit: cover; }
+
+/* ---------- Hero ---------- */
+.hero__media { position: relative; }
+.hero h1 b, .hero h2 b { color: var(--green-800); }
+.price__save {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 18px;
+}
+.badges li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 6px;
+  border-radius: 14px;
+  background: var(--white);
+  border: 1px solid #e6def3;
+  text-align: center;
+  line-height: 1.2;
+}
+.badges span { font-size: 22px; }
+.badges b { font-family: var(--font-head); font-size: 13px; color: var(--green-900); }
+.badges small { font-size: 12px; color: var(--muted); }
+.hero__wa { max-width: 480px; }
+.hero__micro { max-width: 480px; margin: 10px 0 0; text-align: center; font-size: 13px; color: var(--muted); }
+
+/* ---------- Botón de compra con menú desplegable ---------- */
+.buydrop { position: relative; }
+.buydrop__toggle { width: 100%; }
+.btn--buy.buydrop__toggle span { flex: 1; }
+.buydrop__chev { width: 22px !important; height: 22px !important; transition: transform .2s ease; }
+.buydrop.is-open .buydrop__chev { transform: rotate(180deg); }
+.buydrop__menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  padding: 6px;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid #e6def3;
+  box-shadow: 0 18px 40px rgba(43, 26, 92, .22);
+  text-align: left;
+  animation: drop-in .16s ease-out;
+}
+.buydrop__menu[hidden] { display: none; }
+.buydrop--up .buydrop__menu { top: auto; bottom: calc(100% + 10px); left: auto; width: min(320px, calc(100vw - 32px)); }
+.buydrop__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.buydrop__item:hover, .buydrop__item:focus-visible { background: var(--green-100); outline: none; }
+.buydrop__item > span:first-child { font-size: 22px; line-height: 1; }
+.buydrop__item b { display: block; font-family: var(--font-head); font-size: 15px; color: var(--green-900); }
+.buydrop__item small { display: block; font-size: 12.5px; color: var(--muted); }
+.buydrop__menu li + li { border-top: 1px solid #f1edf7; }
+.buydrop--sm .buydrop__toggle { display: inline-flex; align-items: center; gap: 6px; }
+@keyframes drop-in { from { opacity: 0; transform: translateY(-4px); } }
+.buydrop--up .buydrop__menu { animation-name: drop-up; }
+@keyframes drop-up { from { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .buydrop__menu { animation: none; } }
+/* el pulso no debe tapar el menú abierto */
+.buybox--pulse .buydrop.is-open .btn--buy { animation: none; }
+
+/* ---------- Dolor vs Solución ---------- */
+.vs__card--bad { padding-top: 30px; }
+.vs__card--good { padding-top: 30px; }
+.vs__tag--muted { background: #d9d3cd; color: #5b5550; }
+.savings {
+  max-width: 900px;
+  margin: 20px auto 0;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: var(--gold-light);
+  border: 1px dashed var(--gold);
+  text-align: center;
+}
+.savings p { margin: 0; }
+
+/* ---------- Características ---------- */
+.features__img {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.zones { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 760px; margin: 22px auto 0; }
+.zones li {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid #ddd3f1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green-800);
+}
+
+/* ---------- Para quién es ---------- */
+.use--gift { border: 2px solid var(--gold); }
+
+/* ---------- Oferta ---------- */
+.price__label { margin: 0 0 2px; font-size: 14px; color: var(--muted); }
+.price__ship { margin: 6px 0 0; font-weight: 700; color: var(--green-600); }
+.pay__title { margin: 18px 0 0; text-align: center; font-family: var(--font-head); font-weight: 700; color: var(--green-900); }
+.offer__card > img { width: 100%; max-width: 360px; border-radius: var(--radius); }
+
+/* ---------- CTA final ---------- */
+.final .buybox { max-width: 440px; margin: 0 auto; text-align: left; }
+.final .perks { color: var(--ink); }
+
+/* ---------- WhatsApp flotante ---------- */
+.wa-float {
+  position: fixed;
+  right: 16px;
+  bottom: 18px;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: var(--white);
+  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+  transition: transform .2s ease, bottom .25s ease;
+}
+.wa-float svg { width: 32px; height: 32px; }
+.wa-float:hover { transform: scale(1.06); }
+.wa-float__tip {
+  position: absolute;
+  right: calc(100% + 10px);
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+/* en mobile sube cuando aparece la barra fija de compra */
+body:has(.sticky-cta.is-visible) .wa-float { bottom: 88px; }
+body.menu-open .wa-float, body:has(.sticky-cta .buydrop.is-open) .wa-float { display: none; }
+@media (max-width: 859px) { .wa-float__tip { display: none; } }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 860px) {
+  .uses__grid { grid-template-columns: repeat(3, 1fr); max-width: 1080px; }
+  .hero h1 { font-size: 44px; }
+  body:has(.sticky-cta.is-visible) .wa-float { bottom: 24px; }
+  .wa-float { right: 24px; bottom: 24px; }
+}
+.price__label:has(.price__old[hidden]) { display: none; }
+
+/* ---------- Galería: las 4 piezas a la vista ---------- */
+.showcase { background: var(--white); }
+.showcase__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 1080px; margin: 24px auto 0; }
+.showcase figure { margin: 0; }
+.showcase img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+.showcase figcaption { margin-top: 8px; text-align: center; font-size: 13px; font-weight: 600; color: var(--green-900); }
+@media (min-width: 860px) { .showcase__grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+
+/* ---------- Botón directo a la tienda (Emidica) ---------- */
+.btn--store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  background: var(--white);
+  color: var(--green-800);
+  border: 2px solid var(--green-800);
+  font-size: 16px;
+}
+.btn--store svg { width: 22px; height: 22px; flex: none; }
+.btn--store:hover { background: var(--green-100); }
+.final .btn--store { background: transparent; color: var(--white); border-color: var(--gold-light); margin-top: 10px; }
+.buydrop__item--store b { color: var(--green-600); }
