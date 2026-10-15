@@ -207,3 +207,20 @@ body.menu-open .wa-float, body:has(.sticky-cta .buydrop.is-open) .wa-float { dis
 .showcase img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
 .showcase figcaption { margin-top: 8px; text-align: center; font-size: 13px; font-weight: 600; color: var(--green-900); }
 @media (min-width: 860px) { .showcase__grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+
+/* ---------- Botón directo a la tienda (Emidica) ---------- */
+.btn--store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  background: var(--white);
+  color: var(--green-800);
+  border: 2px solid var(--green-800);
+  font-size: 16px;
+}
+.btn--store svg { width: 22px; height: 22px; flex: none; }
+.btn--store:hover { background: var(--green-100); }
+.final .btn--store { background: transparent; color: var(--white); border-color: var(--gold-light); margin-top: 10px; }
+.buydrop__item--store b { color: var(--green-600); }
