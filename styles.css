@@ -81,6 +81,18 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-weight: 600;
   text-decoration: none;
 }
+.nav__buy {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--green-600), var(--green-800));
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
 
 .nav__menu {
   display: grid;
@@ -99,8 +111,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 420px) {
   .nav__wa { padding: 9px; }
   .nav__wa span { display: none; }
-  .nav__brand img:last-child { height: 21px; }
+  .nav__brand img:last-child { height: 18px; }
+  .nav__buy { padding: 8px 12px; }
   .nav__brand img:first-child { height: 34px; }
+}
+@media (max-width: 379px) {
+  .nav { gap: 8px; }
+  .nav__brand img:first-child { height: 28px; }
+  .nav__brand img:last-child { height: 14px; }
 }
 
 /* ---------- Menú lateral ---------- */
