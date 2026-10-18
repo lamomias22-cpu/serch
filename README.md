@@ -16,6 +16,11 @@ Pendientes recomendados:
 ## Estructura
 1. Barra superior · 2. Hero · 3. Dolor vs. Solución · 4. Casos de uso · 5. Características → beneficios · 6. Oferta y medios de pago · 7. FAQ · CTA final · 8. Footer · Barra de compra fija en mobile
 
+## Landing del Sillón Inflable (`sillon/`)
+Segunda landing en la carpeta `sillon/`, con el mismo diseño (`styles.css`) y la misma lógica (`main.js`) que la de la plancha. Su precio, descuento y link de tienda se editan en `sillon/config.js`; las fotos están en `sillon/assets/`. El formulario de pedido suma la elección de color y la manda en el mensaje de WhatsApp.
+Una vez publicada queda en `https://oferta.artederegalar.com.ar/sillon/`.
+Pendientes: poner en `checkoutUrl` el link del producto en la tienda (hoy lleva a la portada) y confirmar que el inflador de pie viene incluido.
+
 ## Publicar en un subdominio (GitHub Pages, gratis)
 La landing se publica desde este repositorio y los botones de compra siguen llevando al producto en la tienda de Emidica.
 

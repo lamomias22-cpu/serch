@@ -3,6 +3,7 @@
  * Editá estos valores y se actualizan en toda la landing.
  */
 window.LANDING_CONFIG = {
+  producto: "Mini Plancha a Vapor Portátil", // nombre en el mensaje de pedido
   precio: 58999,              // precio de lista (tarjeta)
   precioAnterior: null,       // precio tachado; poné null para ocultarlo
   descuento: 5,               // % de descuento por transferencia

@@ -555,6 +555,11 @@ section[id] { scroll-margin-top: 70px; }
 .final h3 { font-size: 28px; max-width: 560px; margin: 0 auto 10px; }
 .final p { margin: 0 auto 24px; max-width: 520px; opacity: .85; }
 .final .btn { max-width: 440px; margin: 0 auto; }
+.final p:last-child { margin: 18px auto 0; }
+.final__wa { color: inherit; }
+
+/* Landing del sillón: consulta y colores en el hero */
+.hero__colors { margin: 12px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
 
 /* ---------- Footer ---------- */
 .footer {

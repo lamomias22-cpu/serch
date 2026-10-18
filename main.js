@@ -97,7 +97,8 @@
       var lines = [
         "¡Hola! Quiero hacer este pedido:",
         "",
-        "🛍️ " + t.qty + " x Mini Plancha a Vapor Portátil",
+        "🛍️ " + t.qty + " x " + (cfg.producto || "Mini Plancha a Vapor Portátil"),
+        form.color ? "Color: " + f("color") : null,
         "Subtotal: " + ars(t.sub),
         t.off ? "Descuento transferencia (" + cfg.descuento + "%): -" + ars(t.off) : null,
         "Envío: GRATIS",
