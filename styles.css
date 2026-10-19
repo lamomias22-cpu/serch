@@ -531,6 +531,10 @@ section[id] { scroll-margin-top: 70px; }
   font-weight: 700;
   color: #3d4744;
 }
+.logos__imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+.logos__imgs figure { margin: 0; }
+.logos__imgs img { width: 100%; height: auto; border-radius: 12px; }
+.logos__imgs figcaption { margin-top: 8px; font-size: 12px; line-height: 1.35; color: var(--muted); }
 
 /* ---------- FAQ ---------- */
 .faq { background: var(--white); }
