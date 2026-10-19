@@ -20,7 +20,10 @@
   var storeUrl = cfg.checkoutUrl || cfg.whatsappUrl;
   document.querySelectorAll(".js-store").forEach(function (a) { a.href = storeUrl; });
   var useForm = cfg.modoCompra === "formulario" && document.getElementById("checkout");
+  var pagos = cfg.seccionPagos && document.querySelector(cfg.seccionPagos);
   document.querySelectorAll(".js-buy").forEach(function (a) {
+    // Con seccionPagos, los botones de fuera de esa sección llevan a ella
+    if (pagos && !pagos.contains(a)) { a.href = cfg.seccionPagos; return; }
     a.href = storeUrl;
     if (!cfg.checkoutUrl) { a.target = "_blank"; a.rel = "noopener"; }
     if (useForm) a.addEventListener("click", function (e) { e.preventDefault(); openCheckout(a); });

@@ -13,6 +13,7 @@ window.LANDING_CONFIG = {
   //  "formulario" → abre el formulario de pedido en la landing y lo envía por WhatsApp
   //  "tienda"     → lleva a checkoutUrl (el producto en la tienda Emidica)
   modoCompra: "formulario",
+  seccionPagos: "#oferta",    // los botones de compra llevan a esta sección; los de adentro abren el formulario
   whatsappPedidos: "5493413088480",
   checkoutUrl: "https://artederegalar.com.ar",
   whatsappUrl: "https://wa.me/5493413088480?text=Hola!%20Quiero%20comprar%20el%20Sill%C3%B3n%20Inflable"
