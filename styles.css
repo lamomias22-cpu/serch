@@ -217,6 +217,7 @@ section[id] { scroll-margin-top: 70px; }
   color: var(--green-900);
   box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
+.btn[hidden] { display: none; }
 .btn--wa { background: #25d366; color: var(--white); margin-top: 12px; font-size: 16px; }
 .btn--sm { width: auto; padding: 12px 18px; font-size: 15px; }
 .btn--pulse { animation: pulse 2.2s ease-in-out infinite; }

@@ -29,6 +29,12 @@
     if (useForm) a.addEventListener("click", function (e) { e.preventDefault(); openCheckout(a); });
   });
 
+  // Pedido por WhatsApp como segunda opción cuando la compra va a la tienda
+  document.querySelectorAll(".js-form").forEach(function (a) {
+    if (cfg.modoCompra !== "tienda" || !document.getElementById("checkout")) { a.hidden = true; return; }
+    a.addEventListener("click", function (e) { e.preventDefault(); openCheckout(a); });
+  });
+
   // Formulario de pedido
   var co = document.getElementById("checkout");
   var form = document.getElementById("coForm");
