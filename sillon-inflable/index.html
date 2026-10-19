@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sillón Inflable Individual | Comodidad donde quieras</title>
+  <meta name="description" content="Sillón inflable individual de terciopelo con inflador de pie incluido. Para visitas, gaming, lectura o camping. Se infla en minutos y se guarda en un cajón.">
+  <meta property="og:title" content="Sillón Inflable Individual — Inflador incluido">
+  <meta property="og:description" content="Un lugar extra para sentarte, donde quieras. Se infla en minutos.">
+  <meta property="og:image" content="img/visitas.webp">
+  <meta name="theme-color" content="#1e1b4b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14123a;
+      --navy: #1e1b4b;
+      --indigo: #3730a3;
+      --lilac: #c4b5fd;
+      --accent: #facc15;
+      --bg: #f7f6fb;
+      --card: #ffffff;
+      --muted: #5b5878;
+      --line: #e4e1f0;
+      --ok: #16a34a;
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.1; margin: 0 0 .5em; }
+    .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      background: var(--navy); color: #fff; text-align: center;
+      font-size: .82rem; font-weight: 600; letter-spacing: .04em; padding: 8px 16px;
+    }
+    .topbar b { color: var(--accent); }
+
+    /* Hero */
+    .hero { padding: 32px 0 56px; }
+    .hero__grid { display: grid; gap: 32px; align-items: center; }
+    .gallery__main {
+      border-radius: var(--radius); overflow: hidden; background: #ddd;
+      aspect-ratio: 1; box-shadow: 0 24px 60px -24px rgba(30, 27, 75, .45);
+    }
+    .gallery__main img { width: 100%; height: 100%; object-fit: cover; }
+    .thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+    .thumbs button {
+      padding: 0; border: 2px solid transparent; border-radius: 12px; overflow: hidden;
+      aspect-ratio: 1; cursor: pointer; background: #fff; transition: border-color .2s, transform .2s;
+    }
+    .thumbs button:hover { transform: translateY(-2px); }
+    .thumbs button[aria-current="true"] { border-color: var(--indigo); }
+    .thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+    .badge {
+      display: inline-block; background: #ede9fe; color: var(--indigo);
+      font-weight: 600; font-size: .8rem; padding: 6px 12px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; }
+    .hero h1 span { color: var(--indigo); }
+    .lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 20px; }
+    .rating { display: flex; align-items: center; gap: 8px; font-size: .9rem; color: var(--muted); margin-bottom: 20px; }
+    .rating .stars { color: #f59e0b; letter-spacing: 2px; }
+
+    .checks { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 8px; }
+    .checks li { display: flex; gap: 10px; align-items: flex-start; }
+    .checks li::before {
+      content: "✓"; flex: none; width: 22px; height: 22px; border-radius: 50%;
+      background: #dcfce7; color: var(--ok); font-weight: 700; font-size: .8rem;
+      display: grid; place-items: center; margin-top: 2px;
+    }
+
+    .price-box {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px; margin-bottom: 16px;
+    }
+    .price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+    .price__now { font-family: "Outfit", sans-serif; font-weight: 800; font-size: 2.4rem; color: var(--navy); }
+    .price__old { color: var(--muted); text-decoration: line-through; }
+    .price__off { background: var(--accent); color: var(--ink); font-weight: 700; font-size: .8rem; padding: 3px 8px; border-radius: 6px; }
+    .price__note { font-size: .9rem; color: var(--muted); margin: 6px 0 0; }
+    .price__note b { color: var(--ok); }
+
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 18px 24px; border: 0; border-radius: 14px;
+      background: linear-gradient(135deg, var(--indigo), var(--navy));
+      color: #fff; font: 700 1.1rem "Outfit", sans-serif; text-decoration: none; cursor: pointer;
+      box-shadow: 0 12px 28px -10px rgba(55, 48, 163, .7);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -10px rgba(55, 48, 163, .8); }
+    .btn:active { transform: translateY(0); }
+    .trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font-size: .85rem; color: var(--muted); margin-top: 12px; }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    .section-title { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+    .section-title h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+    .section-title p { color: var(--muted); margin: 0; }
+
+    .uses { display: grid; gap: 20px; }
+    .use {
+      background: var(--card); border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--line); transition: transform .2s, box-shadow .2s;
+    }
+    .use:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -24px rgba(30, 27, 75, .4); }
+    .use img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+    .use div { padding: 20px; }
+    .use h3 { font-size: 1.25rem; }
+    .use p { margin: 0; color: var(--muted); }
+
+    .dark { background: var(--navy); color: #fff; }
+    .dark .section-title p { color: var(--lilac); }
+    .story { display: grid; gap: 32px; align-items: center; }
+    .story img { border-radius: var(--radius); max-height: 640px; width: auto; margin-inline: auto; }
+    .steps { list-style: none; counter-reset: s; padding: 0; margin: 0 0 28px; display: grid; gap: 18px; }
+    .steps li { counter-increment: s; display: flex; gap: 16px; }
+    .steps li::before {
+      content: counter(s); flex: none; width: 40px; height: 40px; border-radius: 12px;
+      background: var(--accent); color: var(--ink); font: 800 1.1rem "Outfit", sans-serif;
+      display: grid; place-items: center;
+    }
+    .steps h3 { font-size: 1.1rem; margin-bottom: 4px; }
+    .steps p { margin: 0; color: #d6d3f0; }
+    .dark .btn { background: var(--accent); color: var(--ink); box-shadow: none; }
+
+    .features { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .feature { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .feature .ico { font-size: 1.8rem; margin-bottom: 8px; }
+    .feature h3 { font-size: 1.1rem; }
+    .feature p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    .included {
+      display: grid; gap: 24px; align-items: center; background: var(--card);
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-top: 40px;
+    }
+    .included img { width: 160px; margin-inline: auto; }
+    .included ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+
+    .faq { max-width: 760px; margin-inline: auto; display: grid; gap: 12px; }
+    details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+    summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--indigo); transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { margin: 12px 0 0; color: var(--muted); }
+
+    .final { text-align: center; }
+    .final .wrap { max-width: 560px; }
+
+    footer { text-align: center; padding: 32px 16px 110px; font-size: .85rem; color: var(--muted); }
+
+    /* Sticky mobile CTA */
+    .sticky {
+      position: fixed; inset: auto 0 0 0; z-index: 10; background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(8px); border-top: 1px solid var(--line);
+      padding: 12px 16px; display: flex; align-items: center; gap: 12px;
+      transform: translateY(100%); transition: transform .3s;
+    }
+    .sticky.show { transform: none; }
+    .sticky__price { font: 800 1.3rem "Outfit", sans-serif; color: var(--navy); white-space: nowrap; }
+    .sticky .btn { padding: 14px 18px; font-size: 1rem; }
+
+    @media (min-width: 720px) {
+      .uses { grid-template-columns: repeat(3, 1fr); }
+      .included { grid-template-columns: 200px 1fr; }
+    }
+    @media (min-width: 960px) {
+      .hero { padding: 56px 0 80px; }
+      .hero__grid { grid-template-columns: 1.05fr 1fr; gap: 56px; }
+      .story { grid-template-columns: 1fr 1fr; gap: 64px; }
+      .sticky { display: none; }
+      footer { padding-bottom: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🚚 ENVÍO A TODO EL PAÍS · <b>INFLADOR DE REGALO</b> EN CADA PEDIDO</div>
+
+<!-- HERO: título, imagen, descripción, precio y botón de compra -->
+<header class="hero">
+  <div class="wrap hero__grid">
+    <div class="gallery">
+      <div class="gallery__main">
+        <img id="mainImg" src="img/visitas.webp" alt="Mujer sentada en el sillón inflable azul en un living con amigos" width="1254" height="1254">
+      </div>
+      <div class="thumbs" role="list">
+        <button type="button" aria-current="true" data-src="img/visitas.webp" data-alt="Sillón inflable en un living con visitas"><img src="img/visitas.webp" alt="" loading="lazy"></button>
+        <button type="button" data-src="img/gaming.webp" data-alt="Hombre jugando videojuegos en el sillón inflable"><img src="img/gaming.webp" alt="" loading="lazy"></button>
+        <button type="button" data-src="img/camping.webp" data-alt="Mujer descansando en el sillón inflable junto a un río"><img src="img/camping.webp" alt="" loading="lazy"></button>
+        <button type="button" data-src="img/inflador.jpg" data-alt="Inflador de pie incluido"><img src="img/inflador.jpg" alt="" loading="lazy"></button>
+      </div>
+    </div>
+
+    <div>
+      <span class="badge">✨ Nuevo · Terciopelo suave al tacto</span>
+      <h1>Sillón Inflable Individual: <span>comodidad donde la necesites</span></h1>
+      <p class="lead">Llegan visitas, arranca la partida o te vas de escapada: en minutos tenés un asiento mullido y envolvente. Y cuando no lo usás, se desinfla y se guarda en un cajón.</p>
+
+      <div class="rating"><span class="stars">★★★★★</span> Ideal para living, cuarto, balcón y camping</div>
+
+      <ul class="checks">
+        <li>Se infla en minutos con el inflador de pie incluido</li>
+        <li>Tapizado tipo terciopelo: cálido, suave y lindo a la vista</li>
+        <li>Diseño envolvente que acompaña la espalda</li>
+        <li>Liviano y fácil de llevar: adentro, afuera, de viaje</li>
+      </ul>
+
+      <div class="price-box">
+        <div class="price">
+          <span class="price__now" data-price="precio">$49.999</span>
+          <span class="price__old" data-price="precioAnterior">$69.999</span>
+          <span class="price__off" id="off">-29%</span>
+        </div>
+        <p class="price__note">Pagando por transferencia: <b data-price="transferencia">$47.499</b></p>
+      </div>
+
+      <a class="btn buy" href="#" target="_blank" rel="noopener">🛒 Comprar ahora</a>
+      <div class="trust">
+        <span>🚚 Envío a todo el país</span>
+        <span>🔒 Compra segura</span>
+        <span>💬 Atención por WhatsApp</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- USOS -->
+<section>
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Un solo sillón, mil momentos</h2>
+      <p>No ocupa lugar cuando no lo usás y está listo cuando lo necesitás.</p>
+    </div>
+    <div class="uses">
+      <article class="use">
+        <img src="img/visitas.webp" alt="Reunión con amigos y el sillón inflable" loading="lazy">
+        <div>
+          <h3>¿Llegaron visitas?</h3>
+          <p>Siempre hay un lugar más para sentarse. Nadie se queda parado ni en el piso.</p>
+        </div>
+      </article>
+      <article class="use">
+        <img src="img/gaming.webp" alt="Gaming en el sillón inflable" loading="lazy">
+        <div>
+          <h3>Gaming y series</h3>
+          <p>Postura relajada para partidas largas y maratones sin terminar con la espalda dura.</p>
+        </div>
+      </article>
+      <article class="use">
+        <img src="img/camping.webp" alt="Sillón inflable de camping" loading="lazy">
+        <div>
+          <h3>Escapadas</h3>
+          <p>Llevate la comodidad de tu living al camping, la playa o el jardín.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="dark">
+  <div class="wrap story">
+    <img src="img/antes-despues.webp" alt="Antes: silla incómoda. Después: inflando el sillón y disfrutándolo en el living y el balcón" loading="lazy" width="941" height="1672">
+    <div>
+      <div class="section-title" style="text-align:left;margin:0 0 28px">
+        <h2>Chau silla dura, hola rincón propio</h2>
+        <p>Tu lugar favorito de la casa, armado en minutos.</p>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Sacalo de la caja</h3><p>Viene compacto y liviano, listo para usar.</p></div></li>
+        <li><div><h3>Inflalo con el pie</h3><p>Conectá el inflador incluido a la válvula y en pocos minutos está listo.</p></div></li>
+        <li><div><h3>Disfrutá</h3><p>Leé, tomá unos mates, mirá una serie o mirá el atardecer en el balcón.</p></div></li>
+      </ol>
+      <a class="btn buy" href="#" target="_blank" rel="noopener">Quiero el mío</a>
+    </div>
+  </div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section>
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Pensado para durar y para disfrutar</h2>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="ico">🛋️</div><h3>Ergonómico</h3><p>Forma de puf envolvente que contiene la espalda y los brazos.</p></div>
+      <div class="feature"><div class="ico">🧸</div><h3>Superficie aterciopelada</h3><p>Nada de plástico frío: textura suave, cálida y agradable.</p></div>
+      <div class="feature"><div class="ico">📦</div><h3>Se guarda en segundos</h3><p>Desinflado ocupa lo mismo que una manta doblada.</p></div>
+      <div class="feature"><div class="ico">🎒</div><h3>Portátil</h3><p>Liviano para llevar al patio, al balcón o de camping.</p></div>
+    </div>
+
+    <div class="included">
+      <img src="img/inflador.jpg" alt="Inflador de pie amarillo y azul con manguera y picos" loading="lazy">
+      <div>
+        <h3>📦 Qué incluye tu pedido</h3>
+        <ul>
+          <li>1 Sillón inflable individual</li>
+          <li>1 Inflador de pie con manguera</li>
+          <li>Picos adaptadores para la válvula</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-title"><h2>Preguntas frecuentes</h2></div>
+    <div class="faq">
+      <details><summary>¿Cuánto tarda en inflarse?</summary><p>Con el inflador de pie incluido, unos pocos minutos. También podés usar un inflador eléctrico si tenés uno.</p></details>
+      <details><summary>¿Se puede usar afuera?</summary><p>Sí. Es ideal para balcón, jardín o camping. Te recomendamos apoyarlo sobre una manta o superficie sin objetos punzantes.</p></details>
+      <details><summary>¿Cómo se limpia?</summary><p>Con un paño apenas húmedo. Dejalo secar antes de guardarlo desinflado.</p></details>
+      <details><summary>¿Cómo hago el pedido?</summary><p>Tocá "Comprar ahora", te escribimos por WhatsApp para confirmar tus datos de envío y forma de pago.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="dark final">
+  <div class="wrap">
+    <h2 style="font-size:clamp(1.7rem,4vw,2.4rem)">Siempre hay un lugar más para sentarse</h2>
+    <p style="color:var(--lilac);margin:0 0 24px">Sumá el tuyo hoy y recibilo con el inflador de regalo.</p>
+    <a class="btn buy" href="#" target="_blank" rel="noopener">🛒 Comprar ahora · <span data-price="precio">$49.999</span></a>
+  </div>
+</section>
+
+<footer>© <span id="year">2026</span> · Sillón Inflable Individual · Imágenes ilustrativas.</footer>
+
+<div class="sticky" id="sticky">
+  <span class="sticky__price" data-price="precio">$49.999</span>
+  <a class="btn buy" href="#" target="_blank" rel="noopener">Comprar ahora</a>
+</div>
+
+<script>
+  /* ===== CONFIGURACIÓN: editá precio y WhatsApp acá ===== */
+  var CONFIG = {
+    precio: 49999,          // precio final
+    precioAnterior: 69999,  // precio tachado (null para ocultarlo)
+    descuento: 5,           // % off pagando por transferencia (0 para ocultarlo)
+    whatsapp: "5493413088480",
+    mensaje: "¡Hola! Quiero comprar el Sillón Inflable Individual"
+  };
+
+  var fmt = function (n) { return "$" + Math.round(n).toLocaleString("es-AR"); };
+  var transfer = CONFIG.precio * (1 - CONFIG.descuento / 100);
+
+  document.querySelectorAll("[data-price]").forEach(function (el) {
+    var key = el.getAttribute("data-price");
+    if (key === "precio") el.textContent = fmt(CONFIG.precio);
+    if (key === "transferencia") el.textContent = fmt(transfer);
+    if (key === "precioAnterior") {
+      if (CONFIG.precioAnterior) el.textContent = fmt(CONFIG.precioAnterior);
+      else el.remove();
+    }
+  });
+  var off = document.getElementById("off");
+  if (CONFIG.precioAnterior) off.textContent = "-" + Math.round((1 - CONFIG.precio / CONFIG.precioAnterior) * 100) + "%";
+  else off.remove();
+  if (!CONFIG.descuento) document.querySelector(".price__note").remove();
+
+  var waUrl = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(CONFIG.mensaje + " (" + fmt(CONFIG.precio) + ")");
+  document.querySelectorAll(".buy").forEach(function (a) { a.href = waUrl; });
+
+  // Galería
+  var main = document.getElementById("mainImg");
+  var thumbs = document.querySelectorAll(".thumbs button");
+  thumbs.forEach(function (b) {
+    b.addEventListener("click", function () {
+      main.src = b.dataset.src;
+      main.alt = b.dataset.alt;
+      thumbs.forEach(function (t) { t.removeAttribute("aria-current"); });
+      b.setAttribute("aria-current", "true");
+    });
+  });
+
+  // Barra de compra fija en mobile: aparece al pasar el primer botón
+  var sticky = document.getElementById("sticky");
+  var firstBuy = document.querySelector(".hero .buy");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) {
+      sticky.classList.toggle("show", !e[0].isIntersecting && e[0].boundingClientRect.top < 0);
+    }).observe(firstBuy);
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
